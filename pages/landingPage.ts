@@ -17,10 +17,16 @@ export class LandingPage {
 	loginButton = () => this.page.getByRole("button", { name: "Login" });
 	invalidCredentialsErrorText = () =>
 		this.page.locator("p", { hasText: "Invalid credentials" });
+	loginHeading = () => this.page.getByRole("heading", { name: "Login" });
 
 	// actions
 	async loadLoginPage() {
 		await this.page.goto(process.env.LANDING_PAGE_URL!);
+	}
+
+	async verifyLoginPageHasLoaded() {
+		await expect(this.page).toHaveURL(process.env.LANDING_PAGE_URL!);
+		await expect(this.loginHeading()).toBeVisible();
 	}
 
 	async inputUsername(username: string) {
