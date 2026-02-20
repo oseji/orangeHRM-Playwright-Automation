@@ -6,7 +6,8 @@
 	"scripts": {
 		"test:auth:login": "playwright test tests/authentication/loginWithValidCredentials.spec.ts",
 		"test:auth:invalid-login": "playwright test tests/authentication/loginWithInvalidCredentials.spec.ts",
-		"test:auth:logout": "playwright test tests/authentication/logout.spec.ts"
+		"test:auth:logout": "playwright test tests/authentication/logout.spec.ts",
+		"test:PIM:add-employee": "playwright test tests/personnelInformationManagement/addEmployee.spec.ts"
 	},
 	"keywords": [],
 	"author": "",
